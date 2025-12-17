@@ -1,0 +1,122 @@
+.modal-galeria {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+
+  .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 31, 20, 0.98);
+    backdrop-filter: blur(12px);
+  }
+
+  .close-floating {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover { transform: rotate(90deg); color: #f9a825; }
+  }
+
+  .modal-container {
+    position: relative;
+    background: #fff;
+    width: 100%;
+    max-width: 1200px;
+    height: 85vh;
+    border-radius: 24px;
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+
+    .modal-content {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      height: 100%;
+
+      @media (max-width: 900px) { grid-template-columns: 1fr; }
+    }
+
+   
+    .modal-sidebar {
+      background: #f8f9fa;
+      padding: 60px 40px;
+      border-right: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+
+      .tag { color: #f9a825; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+      h2 { color: #0f2e1e; font-size: 32px; margin: 15px 0; line-height: 1.1; }
+      .description { color: #666; line-height: 1.6; font-size: 15px; flex-grow: 1; }
+
+      .contact-box {
+        background: #0f2e1e;
+        padding: 20px;
+        border-radius: 12px;
+        color: white;
+        span { display: block; font-size: 12px; opacity: 0.7; margin-bottom: 5px; }
+        strong { font-size: 18px; color: #f9a825; }
+      }
+    }
+
+   
+    .modal-gallery-flow {
+      padding: 40px;
+      overflow-y: auto;
+      background: #ffffff;
+
+      .gallery-item {
+   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+
+        &:last-child { border: none; }
+
+        .image-wrapper {
+         width: 100%;
+    max-width: 650px; 
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f8f8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+          img {
+         width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+          }
+          
+        }
+
+        .caption {
+        width: 100%;
+    max-width: 650px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 0 10px;
+      
+}
+p { 
+      margin: 0; 
+      font-size: 14px; 
+      color: #555; 
+      line-height: 1.5;
+      font-weight: 500;
+    }
+      }
+
+    }
+  }
+}
